@@ -3,6 +3,39 @@ import Cart from '../../assets/cart.png'
 import {Container} from "./style";
 import api from "../../services/api";
 
+const products = {
+    "produtos": [
+        {
+            "id": 1,
+            "photo": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWYK2?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1567304928359",
+            "name": "Iphone",
+            "description": "Descrição do produto",
+            "price": 8000
+        },
+        {
+            "id": 2,
+            "photo": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWYK2?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1567304928359",
+            "name": "Galaxy",
+            "description": "Descrição do produto",
+            "price": 3000
+        },
+        {
+            "id": 3,
+            "photo": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWYK2?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1567304928359",
+            "name": "Galaxy",
+            "description": "Descrição do produto",
+            "price": 5000
+        },
+        {
+            "id": 4,
+            "photo": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWYK2?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1567304928359",
+            "name": "Galaxy",
+            "description": "Descrição do produto",
+            "price": 2000
+        }
+    ]
+}
+
 interface IProduct{
     id: number;
     photo: string;
@@ -12,8 +45,8 @@ interface IProduct{
 }
 
 const Home: React.FC = () => {
-    const [data, setData] = useState<IProduct[]>([]);
-    const [cart, setCart] = useState<IProduct[]>([]);
+    const [data, setData] = useState<IProduct[]>(products.produtos);
+    const [cart, setCart] = useState<IProduct[]>(products.produtos);
 
     useEffect(() => {
         api.get('').then(
